@@ -1,0 +1,19 @@
+
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'color-danger': #D72C0D,
+    'danger': (
+      'base': #D72C0D,
+    ),
+  ),
+  $input: (
+    'focus-border-color' : #4642F8,
+    'border-radius': 0,
+  )
+);
+
+
+@use "element-plus/theme-chalk/src/index.scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
