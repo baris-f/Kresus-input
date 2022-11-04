@@ -20,5 +20,8 @@
     font-family: "Lexend Deca", serif !important;
     font-weight: bold;
     text-align: left;
-    width: fit-content !important;
+}
+
+.el-input__icon {
+    color: black !important;
 }

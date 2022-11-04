@@ -8,7 +8,7 @@ defineProps<{
   <div class="greetings">
     <h1 class="black">{{ msg }}</h1>
     <h3>
-      Click on the buttons to see the wrapped and extended version of the inputs.
+      Swap below between wrapped and extended version of the inputs.
     </h3>
   </div>
 </template>

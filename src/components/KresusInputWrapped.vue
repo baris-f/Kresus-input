@@ -1,10 +1,10 @@
 <template>
   <el-form-item prop="name">
-    <el-input placeholder="Please input" :prefix-icon="Apple"
+    <el-input placeholder="Placeholder text" :prefix-icon="LeftIcon"
               v-model="input"
               @change="$emit('update-input', input)"
 
-              :show-password="false ? true : false"
+              :show-password="RightIcon"
     >
     </el-input>
   </el-form-item>
@@ -12,17 +12,17 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { Apple } from '@element-plus/icons-vue'
-
-/*const props = defineProps({
-  input: ref
-})*/
+import {ElIcon} from "element-plus";
 
 const props = defineProps({
-      input: ref,
-
+      input: String,
+      RightIcon : Boolean,
+      LeftIcon : ElIcon,
     }
 )
+
+console.log(typeof props.RightIcon)
+
 const emits = defineEmits(
     ['update-input']
 )

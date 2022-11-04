@@ -4,14 +4,15 @@
         ref="ruleFormRef"
         :model="ruleForm"
         :rules="rules"
-        label-width="120px"
+        label-width="fit-content"
     >
       <kresus-input v-model="ruleForm.name"
                     label="Label"
-                    RightIcon="true"
+                    :RightIcon="false"
+                    :LeftIcon="Apple"
+                    :Message="false"
                     @update-input="updateInput"
 >
-
       </kresus-input>
     </el-form>
   </div>
@@ -28,6 +29,7 @@
 </style>
 
 <script lang="ts" setup>
+import { Apple } from '@element-plus/icons-vue'
 import KresusInput from "@/components/KresusInputWrapped.vue";
 
 import {reactive, ref} from "vue";
