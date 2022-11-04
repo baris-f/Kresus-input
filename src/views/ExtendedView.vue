@@ -6,7 +6,6 @@
         :rules="rules"
         label-width="120px"
     >
-
       <el-form-item label="Activity name" prop="name">
         <kresus-input-extend v-model="ruleForm.name" placeholder="Please input"
                              show-password
@@ -31,8 +30,7 @@ import KresusInputExtend from "../components/KresusInputExtend.vue";
 
 import {reactive, ref} from "vue";
 import type { FormInstance, FormRules } from 'element-plus'
-
-const input = ref("");
+import {useStateStore} from "@/stores/state";
 
 const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
@@ -44,4 +42,8 @@ const rules = reactive<FormRules>({
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
     { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
   ]})
+
+
+const store = useStateStore()
+
 </script>

@@ -1,0 +1,12 @@
+.el-input__wrapper {
+    border-radius: 0 !important;
+}
+.el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1px #4642F8 inset !important;
+}
+.el-input__inner {
+    font-family: "Lexend Deca", serif !important;
+}
+.el-form-item__error {
+    color: #D72C0D !important;
+}
