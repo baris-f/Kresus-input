@@ -1,7 +1,22 @@
 # kresus-input
 
-This template should help get you started developing with Vue 3 in Vite.
+Kresus Input based on element UI.
 
+The two components are under src/components/KresusInputWrapped.vue
+and src/components/KresusInputExtend.vue
+
+One wrapping the default el-input element of the element library, the other extending from it.
+
+To use the component, simple use
+```
+<kresus-input-wrapped> </kresus-input-wrapped>
+<kresus-input-extend></kresus-input-extend>
+```
+instead of el-input.
+
+Usage example can be found under src/views/WrappedView.vue and src/views/ExtendedView.vue.
+
+You may start the project and play with demo checkbox to see the different available states, default,active et error.
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
