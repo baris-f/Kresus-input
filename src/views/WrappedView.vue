@@ -7,11 +7,13 @@
         label-width="fit-content"
     >
       <kresus-input v-model="ruleForm.name"
-                    label="Label"
-                    :RightIcon="false"
-                    :LeftIcon="Apple"
-                    :Message="false"
+                    prop="name"
                     @update-input="updateInput"
+
+                    :label="Label ? 'Label' : ''"
+                    :RightIcon="RightIcon"
+                    :LeftIcon="LeftIcon ? Apple : ''"
+                    :Message="false"
 >
       </kresus-input>
     </el-form>
@@ -35,6 +37,7 @@ import KresusInput from "@/components/KresusInputWrapped.vue";
 import {reactive, ref} from "vue";
 import type { FormInstance, FormRules } from 'element-plus'
 import {useStateStore} from "@/stores/state";
+import {storeToRefs} from "pinia";
 
 const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
@@ -50,7 +53,8 @@ function updateInput(newValue : string) {
   ruleForm.name = newValue;
 }
 
-
 const store = useStateStore()
+
+const {RightIcon, LeftIcon, Label, Message } = storeToRefs(store)
 
 </script>

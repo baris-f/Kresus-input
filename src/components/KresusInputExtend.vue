@@ -14,8 +14,4 @@ export default {
 
 <style scoped>
 
-input {
-  font-family: "Lexend Deca", serif;
-}
-
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <el-form-item prop="name">
+  <el-form-item >
     <el-input placeholder="Placeholder text" :prefix-icon="LeftIcon"
               v-model="input"
               @change="$emit('update-input', input)"
-
               :show-password="RightIcon"
     >
     </el-input>
@@ -20,8 +19,6 @@ const props = defineProps({
       LeftIcon : ElIcon,
     }
 )
-
-console.log(typeof props.RightIcon)
 
 const emits = defineEmits(
     ['update-input']

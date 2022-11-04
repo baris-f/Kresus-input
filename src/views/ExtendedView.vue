@@ -4,11 +4,12 @@
         ref="ruleFormRef"
         :model="ruleForm"
         :rules="rules"
-        label-width="120px"
+        label-width="fit-content"
     >
-      <el-form-item label="Activity name" prop="name">
-        <kresus-input-extend v-model="ruleForm.name" placeholder="Please input"
-                             show-password
+      <el-form-item :label="Label ? 'Label' : ''" prop="name">
+        <kresus-input-extend v-model="ruleForm.name" placeholder="Placeholder text"
+                             :prefixIcon="LeftIcon ? Apple : ''"
+                             :show-password="RightIcon"
           ></kresus-input-extend>
       </el-form-item>
     </el-form>
@@ -27,10 +28,12 @@
 
 <script lang="ts" setup>
 import KresusInputExtend from "../components/KresusInputExtend.vue";
+import { Apple } from '@element-plus/icons-vue'
 
 import {reactive, ref} from "vue";
 import type { FormInstance, FormRules } from 'element-plus'
 import {useStateStore} from "@/stores/state";
+import {storeToRefs} from "pinia";
 
 const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
@@ -44,5 +47,7 @@ const rules = reactive<FormRules>({
 
 
 const store = useStateStore()
+
+const {RightIcon, LeftIcon, Label, Message } = storeToRefs(store)
 
 </script>
