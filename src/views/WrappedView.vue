@@ -6,8 +6,11 @@
         :rules="rules"
         label-width="120px"
     >
-      <kresus-input :input="ruleForm.name"
-                    >
+      <kresus-input v-model="ruleForm.name"
+                    label="Label"
+                    RightIcon="true"
+                    @update-input="updateInput"
+>
 
       </kresus-input>
     </el-form>
@@ -33,14 +36,18 @@ import {useStateStore} from "@/stores/state";
 
 const ruleFormRef = ref<FormInstance>()
 const ruleForm = reactive({
-  name: 'tmp'
+  name: ''
 })
 
 const rules = reactive<FormRules>({
   name: [
-    { required: true, message: 'Please input Activity name', trigger: 'blur' },
-    { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
+    { min: 3, max: 10, message: 'Length should be 3 to 10', trigger: 'blur' },
   ]})
+
+function updateInput(newValue : string) {
+  ruleForm.name = newValue;
+}
+
 
 const store = useStateStore()
 

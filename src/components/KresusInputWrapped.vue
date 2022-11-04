@@ -1,9 +1,10 @@
 <template>
-  <el-form-item label="Activity name" prop="name">
+  <el-form-item prop="name">
     <el-input placeholder="Please input" :prefix-icon="Apple"
               v-model="input"
-              v-if="true"
-              show-password
+              @change="$emit('update-input', input)"
+
+              :show-password="false ? true : false"
     >
     </el-input>
   </el-form-item>
@@ -13,12 +14,20 @@
 import { ref } from 'vue'
 import { Apple } from '@element-plus/icons-vue'
 
-const props = defineProps({
+/*const props = defineProps({
   input: ref
-})
+})*/
+
+const props = defineProps({
+      input: ref,
+
+    }
+)
+const emits = defineEmits(
+    ['update-input']
+)
 
 //const tmp = ref("")
-console.log(props.input);
 
 
 </script>

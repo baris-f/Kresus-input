@@ -10,3 +10,15 @@
 .el-form-item__error {
     color: #D72C0D !important;
 }
+
+.el-form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.el-form-item__label {
+    font-family: "Lexend Deca", serif !important;
+    font-weight: bold;
+    text-align: left;
+    width: fit-content !important;
+}
