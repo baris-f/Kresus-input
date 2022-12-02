@@ -24,13 +24,9 @@ const emits = defineEmits(
     ['update-input']
 )
 
-//const tmp = ref("")
-
-
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 
 /*input {
   width: 238px;
